@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#File Find
+echo "Searching for files called $1 in current dir and all sub-dirs"
+find . -name "$1" 2>/dev/null

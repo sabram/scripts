@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Text Find
+echo "Searching for files containing the text '$1' in current dir and all sub-dirs"
+find . -type f -not -iwholename '*.git*' -exec grep -il "$1" {} \;
