@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Script to prepend every line with a quote (')
+#and append every line with a quote and a commo (',).
+#Useful for preparing lists for use in sql statements.
+#
+echo "Surrounding every line in $1 with ' and ',"
+sed "s/^/\'/;s/$/\',/" $1
