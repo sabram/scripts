@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Find Directories 
+echo "Searching for directories called $1 in current dir and all sub-dirs"
+find . -type d -name "$1" 2>/dev/null
