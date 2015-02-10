@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-#Script to prepend every line with a quote (')
+#Script to prepend every line with a quote (') aka /x27 in ascii
 #and append every line with a quote and a commo (',).
 #Useful for preparing lists for use in sql statements.
 #
 echo "Surrounding every line in $1 with ' and ',"
-sed "s/^/\'/;s/$/\',/" $1
+awk ‘{print “\x27″ $0 “\x27,”}’ $1
+#the following lines achieve the same effect
+#awk -v q=”‘” ‘{print q $0 q”,”}’ $1
+#sed "s/^/\'/;s/$/\',/" $1
