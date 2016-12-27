@@ -1,10 +1,15 @@
-source .bash_profile_ext
-echo running ~/.bash_profile
+echo in /Users/sabram/dev/scripts/bash_profile_shared.sh
+echo sourcing ~/.bash_profile_ext
+source ~/.bash_profile_ext
 
-alias vibp='vi ~/.bash_profile'
-alias catbp='cat ~/.bash_profile'
+export SCRIPTS="/Users/sabram/dev/scripts"
+alias vibp='vi $SCRIPTS/bash_profile_shared.sh'
+alias viBP='vi ~/.bash_profile'
+alias vibpext='vi ~/.bash_profile_ext'
+alias vibplc='vi ~/.bash_profile_lc'
+alias catbp='cat $SCRIPTS/bash_profile_shared.sh'
 alias srcbp='source ~/.bash_profile'
-alias lessbp='less ~/.bash_profile'
+alias lessbp='less $SCRIPTS/bash_profile_shared.sh'
 alias vilaunch="sudo vi /etc/launchd.conf"
 alias catlaunch="cat /etc/launchd.conf"
 alias Docs="cd ~/Documents/"
