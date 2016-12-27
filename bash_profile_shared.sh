@@ -1,13 +1,18 @@
-echo in /Users/sabram/dev/scripts/bash_profile_shared.sh
+#!/usr/bin/env bash
+#Bash profile script. 'source' this from your ~/.bash_profile and customize the SCRIPTS variable.
+#Any non generic commands (e.g. company or personal laptop specific) can be referenced/sourced from .bash_profile_ext
+#Note that ~ doesn't seem to play well with variables, so using full path
+export SCRIPTS="/Users/sabram/dev/scripts"
+echo in $SCRIPTS/bash_profile_shared.sh
 echo sourcing ~/.bash_profile_ext
 source ~/.bash_profile_ext
 
-export SCRIPTS="/Users/sabram/dev/scripts"
 alias vibp='vi $SCRIPTS/bash_profile_shared.sh'
 alias viBP='vi ~/.bash_profile'
 alias vibpext='vi ~/.bash_profile_ext'
 alias vibplc='vi ~/.bash_profile_lc'
 alias catbp='cat $SCRIPTS/bash_profile_shared.sh'
+alias catlc='cat ~/.bash_profile_lc'
 alias srcbp='source ~/.bash_profile'
 alias lessbp='less $SCRIPTS/bash_profile_shared.sh'
 alias vilaunch="sudo vi /etc/launchd.conf"
