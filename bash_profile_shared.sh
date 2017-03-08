@@ -69,5 +69,3 @@ export PS1
 ##########
 # git END
 ##########
-
-source ~/.xsh
