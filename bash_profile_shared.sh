@@ -21,6 +21,7 @@ alias Docs="cd ~/Documents/"
 alias del="cd ~/Documents/del"
 alias tl="cd ~/dev/testlab"
 alias dev="cd ~/dev"
+alias scripts="cd ~/dev/scripts"
 
 ##########
 #mvn start
@@ -64,10 +65,10 @@ alias s='git status'
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
-PS1="\[\e[32m\]\$(parse_git_branch)\[\e[34m\]\h:\W \$ \[\e[m\]"
+#Note that the 94m here is Light blue for command prompt after the branch name.
+PS1="\[\e[32m\]\$(parse_git_branch)\[\e[94m\]\W \$ \[\e[m\]"
 export PS1
 ##########
 # git END
 ##########
 
-source ~/.xsh
