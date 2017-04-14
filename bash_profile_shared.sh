@@ -4,6 +4,7 @@
 #Note that ~ doesn't seem to play well with variables, so using full path
 export SCRIPTS="/Users/sabram/dev/scripts"
 echo in $SCRIPTS/bash_profile_shared.sh
+
 echo sourcing ~/.bash_profile_ext
 source ~/.bash_profile_ext
 
@@ -48,26 +49,28 @@ alias dtree="mvn dependency:tree"
 #mvn end
 ##########
 
-
+echo "sourcing /Users/sabram/dev/gitfiles/git.sh"
+source /Users/sabram/dev/gitfiles/git.sh
+ 
 ##########
 # git
 ##########
-source ~/git-completion.bash
-alias glog='git log origin/development..development'
-alias glog2='git log origin/develop..develop'
-alias gdiff='git diff origin/development..development'
-alias gdiff2='git diff origin/develop..develop'
-alias vigc="vi ~/.gitconfig"
-alias catgc="cat /Users/sabram/dev/gitfiles/.gitconfig"
-alias s='git status'
+#source ~/git-completion.bash
+#alias glog='git log origin/development..development'
+#alias glog2='git log origin/develop..develop'
+#alias gdiff='git diff origin/development..development'
+#alias gdiff2='git diff origin/develop..develop'
+#alias vigc="vi ~/.gitconfig"
+#alias catgc="cat /Users/sabram/dev/gitfiles/.gitconfig"
+#alias s='git status'
 # add git branch to prompt
 # http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
-function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
+#function parse_git_branch {
+#    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+#}
 #Note that the 94m here is Light blue for command prompt after the branch name.
-PS1="\[\e[32m\]\$(parse_git_branch)\[\e[94m\]\W \$ \[\e[m\]"
-export PS1
+#PS1="\[\e[32m\]\$(parse_git_branch)\[\e[94m\]\W \$ \[\e[m\]"
+#export PS1
 ##########
 # git END
 ##########
