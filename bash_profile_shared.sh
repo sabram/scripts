@@ -56,9 +56,8 @@ alias glog='git log origin/development..development'
 alias glog2='git log origin/develop..develop'
 alias gdiff='git diff origin/development..development'
 alias gdiff2='git diff origin/develop..develop'
-git config --global alias.co checkout
 alias vigc="vi ~/.gitconfig"
-alias catgc="cat ~/.gitconfig"
+alias catgc="cat /Users/sabram/dev/gitfiles/.gitconfig"
 alias s='git status'
 # add git branch to prompt
 # http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
