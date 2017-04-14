@@ -18,6 +18,7 @@ alias lessbp='less $SCRIPTS/bash_profile_shared.sh'
 alias vilaunch="sudo vi /etc/launchd.conf"
 alias catlaunch="cat /etc/launchd.conf"
 alias Docs="cd ~/Documents/"
+alias tmp="cd ~/Documents/tmp"
 alias del="cd ~/Documents/del"
 alias tl="cd ~/dev/testlab"
 alias dev="cd ~/dev"
