@@ -24,6 +24,7 @@ alias del="cd ~/Documents/del"
 alias tl="cd ~/dev/testlab"
 alias dev="cd ~/dev"
 alias scripts="cd ~/dev/scripts"
+alias gitfiles="cd ~/dev/gitfiles"
 
 ##########
 #mvn start
