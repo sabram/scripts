@@ -9,6 +9,7 @@ export PATH=$PATH:$SCRIPTS
 echo sourcing ~/.bash_profile_ext
 source ~/.bash_profile_ext
 
+alias l='ls -alt'
 alias vibp='vi $SCRIPTS/bash_profile_shared.sh'
 alias viBP='vi ~/.bash_profile'
 alias vibpext='vi ~/.bash_profile_ext'
