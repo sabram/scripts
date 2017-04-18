@@ -8,7 +8,7 @@ echo in $SCRIPTS/bash_profile_shared.sh
 echo sourcing ~/.bash_profile_ext
 source ~/.bash_profile_ext
 
-alias ip="ifconfig | grep 'net ''  | grep -v 127.0.0.1"
+alias ip="ifconfig | grep 'net '  | grep -v 127.0.0.1"
 alias vibp='vi $SCRIPTS/bash_profile_shared.sh'
 alias viBP='vi ~/.bash_profile'
 alias vibpe='vi ~/.bash_profile_ext'
