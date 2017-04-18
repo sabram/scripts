@@ -4,16 +4,19 @@
 #Note that ~ doesn't seem to play well with variables, so using full path
 export SCRIPTS="/Users/sabram/dev/scripts"
 echo in $SCRIPTS/bash_profile_shared.sh
+export PATH=$PATH:$SCRIPTS
 
 echo sourcing ~/.bash_profile_ext
 source ~/.bash_profile_ext
 
+alias l='ls -alt'
 alias ip="ifconfig | grep 'net '  | grep -v 127.0.0.1"
 alias vibp='vi $SCRIPTS/bash_profile_shared.sh'
 alias viBP='vi ~/.bash_profile'
 alias vibpe='vi ~/.bash_profile_ext'
 alias catbp='cat $SCRIPTS/bash_profile_shared.sh'
 alias catbpe='cat ~/.bash_profile_ext'
+alias catBP='cat ~/.bash_profile'
 alias srcbp='source ~/.bash_profile'
 #alias vilaunch="sudo vi /etc/launchd.conf"
 #alias catlaunch="cat /etc/launchd.conf"
@@ -49,12 +52,14 @@ alias dtree="mvn dependency:tree"
 #mvn end
 ##########
 
-echo "sourcing /Users/sabram/dev/gitfiles/git.sh"
-source /Users/sabram/dev/gitfiles/git.sh
  
 ##########
 # git
 ##########
+echo "sourcing /Users/sabram/dev/gitfiles/git.sh"
+source /Users/sabram/dev/gitfiles/git.sh
+git config --global core.excludesfile '/Users/sabram/dev/gitfiles/.gitignore'
+
 #source ~/git-completion.bash
 #alias glog='git log origin/development..development'
 #alias glog2='git log origin/develop..develop'
