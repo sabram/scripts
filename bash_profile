@@ -12,10 +12,10 @@ source ~/.bash_profile_ext
 
 alias l='ls -alt'
 alias ip="ifconfig | grep 'net '  | grep -v 127.0.0.1"
-alias vibp='vi $SCRIPTS/bash_profile_shared.sh'
+alias vibp='vi $SCRIPTS/bash_profile'
 alias viBP='vi ~/.bash_profile'
 alias vibpe='vi ~/.bash_profile_ext'
-alias catbp='cat $SCRIPTS/bash_profile_shared.sh'
+alias catbp='cat $SCRIPTS/bash_profile'
 alias catbpe='cat ~/.bash_profile_ext'
 alias catBP='cat ~/.bash_profile'
 alias srcbp='source ~/.bash_profile'
@@ -69,14 +69,18 @@ git config --global core.excludesfile '/Users/shaunabram/dev/gitfiles/.gitignore
 #alias vigc="vi ~/.gitconfig"
 #alias catgc="cat /Users/shaunabram/dev/gitfiles/.gitconfig"
 #alias s='git status'
-# add git branch to prompt
+
+#Prompt configuration, including adding git branch to prompt
 # http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
-#function parse_git_branch {
-#    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-#}
+# https://xta.github.io/HalloweenBash/
+function parse_git_branch {
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 #Note that the 94m here is Light blue for command prompt after the branch name.
-#PS1="\[\e[32m\]\$(parse_git_branch)\[\e[94m\]\W \$ \[\e[m\]"
-#export PS1
+PS1="\[\e[32m\]\w\[\e[94m\] $(parse_git_branch) \[\e[37m\]\$ \[\e[m\]"
+export PS1
+
+
 ##########
 # git END
 ##########
