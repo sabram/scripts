@@ -70,14 +70,26 @@ git config --global core.excludesfile '/Users/shaunabram/dev/gitfiles/.gitignore
 #alias catgc="cat /Users/shaunabram/dev/gitfiles/.gitconfig"
 #alias s='git status'
 
+echo "sourcing source ~/dev/scripts/.git-prompt.sh (if not found, copy from https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh"
+source ~/dev/scripts/git-prompt.sh
+
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
 #Prompt configuration, including adding git branch to prompt
-# http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
-# https://xta.github.io/HalloweenBash/
-function parse_git_branch {
-   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# Add this to your ~/.bash_profile or ~/.bashrc
+
+# Function to extract the current Git branch
+parse_git_branch() {
+  git branch 2>/dev/null | sed -n '/\* /s///p'
 }
-#Note that the 94m here is Light blue for command prompt after the branch name.
-PS1="\[\e[32m\]\w\[\e[94m\] $(parse_git_branch) \[\e[37m\]\$ \[\e[m\]"
+
+# Function to detect uncommitted changes
+parse_git_dirty() {
+  [[ $(git status --porcelain 2>/dev/null) != "" ]] && echo "*"
+}
+
+# Light green for path, bright green for branch, red for dirty indicator
+export PS1="\[\033[92m\]\w \[\033[32m\](\$(parse_git_branch)\[\033[31m\]\$(parse_git_dirty)\[\033[32m\])\[\033[00m\]\$ "
 export PS1
 
 
